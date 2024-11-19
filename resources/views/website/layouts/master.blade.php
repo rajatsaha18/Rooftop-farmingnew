@@ -32,6 +32,7 @@
     <link href="{{ asset('public/website/assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('public/website/assets/css/unit-test.css') }}" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ========== End Stylesheet ========== -->
     <style>
         .member_button {
@@ -39,7 +40,42 @@
             color: black !important;
         }
 
-        
+        .login-form {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    }
+    .login-form h2 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .form-control {
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        width: 100%;
+    }
+    .btn {
+    display: inline-block;
+    font-weight: 700;
+    text-transform: capitalize;
+    transition: all 0.35s ease-in-out;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    box-shadow: none !important;
+    font-size: 16px;
+    letter-spacing: 0;
+    padding: 13px 30px;
+    position: relative;
+    z-index: 1;
+}
+
+
+
     </style>
 
 </head>
@@ -144,6 +180,15 @@
     <script src="{{ asset('public/website/assets/js/loopcounter.js') }}"></script>
     <script src="{{ asset('public/website/assets/js/validnavs.js') }}"></script>
     <script src="{{ asset('public/website/assets/js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    @if(Session::has('message'))
+    <script>
+        toastr.success("{{ Session::get('message') }}");
+    </script>
+
+    @endif
 
 
 </body>

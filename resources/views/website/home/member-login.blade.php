@@ -17,7 +17,7 @@ Member-Login | Rooftop Farming
         padding: 15px;
         background-color: #fff;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
     }
     .login-form h2 {
         margin-bottom: 20px;
@@ -48,31 +48,6 @@ Member-Login | Rooftop Farming
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>
-        {{-- <div class="row">
-            <div class="col-md-4 mx-auto">
-                <div class="card shadow">
-                    <div class="card-header">Member-Login</div>
-                    <div class="card-body">
-                        <form action="{{ route('member.login.submit') }}" method="POST">
-                            @csrf
-                            <div class="from-group mb-3">
-                                <label for="">email</label>
-                                <input type="email" name="email" class="form-control">
-                            </div>
-                            <div class="from-group mb-3">
-                                <label for="">password</label>
-                                <input type="password" name="password" class="form-control">
-                            </div>
-                            <div class="from-group mb-3">
-                                <label for=""></label>
-                                <input type="submit" class="btn member_button" value="submit">
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div> --}}
     </div>
 </section>
 

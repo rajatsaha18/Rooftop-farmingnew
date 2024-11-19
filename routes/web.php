@@ -5,6 +5,7 @@ use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Middleware\CheckMember;
 use App\Http\Middleware\RedirectIfAuth;
+use App\Http\Controllers\website\MyProjectController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -17,6 +18,12 @@ Route::post('/member-login-confirm', [HomeController::class, 'memberLoginSubmit'
 Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 ->name('member.dashboard')->middleware(CheckMember::class);
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
+
+// member project
+Route::get('/member-project', [MyProjectController::class, 'index'])->name('member.project');
+Route::get('/member-project/add', [MyProjectController::class, 'projectAdd'])->name('project.add');
+Route::post('/member-project/store', [MyProjectController::class, 'store'])->name('project.store');
+
 
 
 /*==================admin=====================*/
