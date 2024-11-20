@@ -82,7 +82,7 @@
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/admins/course-dashboard.html">Add Blog</a>
+                                href="{{ route('blog.index') }}">Add Blog</a>
                         </li>
                         <li class="pc-item"><a class="pc-link"
                                 href="https://ableproadmin.com/admins/course-dashboard.html">Manage Blog</a>

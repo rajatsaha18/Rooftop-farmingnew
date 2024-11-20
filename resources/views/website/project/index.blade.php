@@ -13,15 +13,18 @@ Home | Rooftop Farming
         background-color: red;
     }
 </style>
- <section class="py-5">
+ <section class="py-2">
     <div class="container">
         <div class="row">
 
             <div class="text-end">
-                <a href="{{ route('project.add') }}" class="btn member_button mb-2">Add Project</a>
+                <a href="{{ route('project.add') }}" class="btn member_button mb-2"><i class="fa-solid fa-folder-plus"></i> Add Project</a>
             </div>
-            <div class="col-md-12">
-                <h4 class="text-center text-success mt-3 mb-3">Project Manage</h4>
+            <h4 class="text-center text-success mb-3">Project Manage</h4>
+            @include('website.member.sidebar')
+
+            <div class="col-md-9">
+
                 <div class="card card-body">
                     <table class="table table-bordered table-strip">
                         <thead>
@@ -55,8 +58,8 @@ Home | Rooftop Farming
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-info btn-sm" id="button_edit"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="btn btn-danger" id="button_delete"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ route('project.edit',$project->id) }}" class="btn btn-info btn-sm" id="button_edit"><i class="fa fa-edit"></i></a>
+                                    <a href="{{ route('project.delete',$project->id) }}" onclick="return confirm('Are you sure delete this?')" class="btn btn-danger" id="button_delete"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach

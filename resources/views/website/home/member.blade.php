@@ -27,10 +27,7 @@ Home | Rooftop Farming
                     <input type="password" name="password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                {{-- <div class="from-group">
-                    <label for=""></label>
-                    <input type="submit" class="btn btn-success" value="submit">
-                </div> --}}
+                
             </form>
         </div>
     </div>

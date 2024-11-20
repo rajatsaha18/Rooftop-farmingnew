@@ -35,4 +35,38 @@ class Project extends Model
         self::$project->save();
 
     }
+
+    public static function updateProject($request, $id)
+    {
+        self::$project = Project::find($id);
+        if($request->file('image'))
+        {
+            if(file_exists(self::$project->image))
+            {
+                unlink(self::$project->image);
+            }
+            self::$imageUrl = self::getImageUrl($request->file('image'));
+        }
+        else
+        {
+            self::$imageUrl = self::$project->image;
+        }
+        self::$project->name           = $request->name;
+        self::$project->location       = $request->location;
+        self::$project->project_type   = $request->project_type;
+        self::$project->description    = $request->description;
+        self::$project->image          = self::$imageUrl;
+        self::$project->status         = $request->status;
+        self::$project->save();
+    }
+
+    public static  function deleteProject($id)
+    {
+        self::$project = Project::find($id);
+        if(file_exists(self::$project))
+        {
+            unlink(self::$project->image);
+        }
+        self::$project->delete();
+    }
 }

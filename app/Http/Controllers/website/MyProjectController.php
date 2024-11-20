@@ -9,9 +9,10 @@ use Session;
 
 class MyProjectController extends Controller
 {
+    public $projects;
     public function index()
     {
-        $projects = Project::all();
+        $projects = $this->projects = Project::all();
         return view('website.project.index',compact('projects'));
     }
     public function projectAdd()
@@ -28,6 +29,23 @@ class MyProjectController extends Controller
         Project::newProject($request);
         return redirect()->route('member.project')->with('message', 'Project Save Successfully');
 
+    }
+
+    public function edit($id)
+    {
+        $project = Project::find($id);
+        return view('website.project.edit',compact('project'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        Project::updateProject($request,$id);
+        return redirect()->route('member.project')->with('message', 'Project Update Successfully');
+    }
+    public function delete($id)
+    {
+        Project::deleteProject($id);
+        return redirect()->route('member.project')->with('message', 'Project Delete Successfully');
     }
 }
 
