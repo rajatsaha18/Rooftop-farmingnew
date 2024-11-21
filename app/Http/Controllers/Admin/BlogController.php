@@ -22,4 +22,19 @@ class BlogController extends Controller
         Blog::newBlog($request);
         return redirect()->route('blog.index')->with('message','Blog Create Successfully');
     }
+    public function edit($id)
+    {
+        $blog = Blog::find($id);
+        return view('admin.blog.edit',compact('blog'));
+    }
+    public function update(Request $request,$id)
+    {
+        Blog::updateBlog($request,$id);
+        return redirect()->route('blog.index')->with('message','Blog Update Successfully');
+    }
+    public function delete($id)
+    {
+        Blog::deleteBlog($id);
+        return redirect()->route('blog.index')->with('message','Blog Update Successfully');
+    }
 }

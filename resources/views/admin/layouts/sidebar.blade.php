@@ -39,42 +39,7 @@
                         <li class="pc-item"><a class="pc-link" href="finance.html">Finance</a></li>
                     </ul>
                 </li>
-                <li class="pc-item pc-hasmenu"><a href="#!" class="pc-link"><span class="pc-micon"><svg
-                                class="pc-icon">
-                                <use xlink:href="#custom-document"></use>
-                            </svg> </span><span class="pc-mtext">Layouts</span> <span class="pc-arrow"><i
-                                data-feather="chevron-right"></i></span></a>
-                    <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/demo/layout-vertical.html">Vertical</a></li>
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/demo/layout-horizontal.html">Horizontal</a></li>
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/demo/layout-color-header.html">Layouts 2</a></li>
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/demo/layout-compact.html">Compact</a></li>
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/demo/layout-tab.html">Tab</a></li>
-                    </ul>
-                </li>
-                <li class="pc-item pc-caption"><label>Widget</label> <svg class="pc-icon">
-                        <use xlink:href="#custom-presentation-chart"></use>
-                    </svg></li>
-                <li class="pc-item"><a href="https://ableproadmin.com/widget/w_statistics.html"
-                        class="pc-link"><span class="pc-micon"><svg class="pc-icon">
-                                <use xlink:href="#custom-story"></use>
-                            </svg> </span><span class="pc-mtext">Statistics</span></a></li>
-                <li class="pc-item"><a href="https://ableproadmin.com/widget/w_data.html" class="pc-link"><span
-                            class="pc-micon"><svg class="pc-icon">
-                                <use xlink:href="#custom-fatrows"></use>
-                            </svg> </span><span class="pc-mtext">Data</span></a></li>
-                <li class="pc-item"><a href="https://ableproadmin.com/widget/w_chart.html" class="pc-link"><span
-                            class="pc-micon"><svg class="pc-icon">
-                                <use xlink:href="#custom-presentation-chart"></use>
-                            </svg> </span><span class="pc-mtext">Chart</span></a></li>
-                <li class="pc-item pc-caption"><label>Admin Panel</label> <svg class="pc-icon">
-                        <use xlink:href="#custom-layer"></use>
-                    </svg></li>
+
                 <li class="pc-item pc-hasmenu"><a href="#!" class="pc-link"><span class="pc-micon"><svg
                                 class="pc-icon">
                                 <use xlink:href="#custom-layer"></use>
@@ -84,10 +49,6 @@
                         <li class="pc-item"><a class="pc-link"
                                 href="{{ route('blog.index') }}">Add Blog</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link"
-                                href="https://ableproadmin.com/admins/course-dashboard.html">Manage Blog</a>
-                        </li>
-
                     </ul>
                 </li>
 

@@ -9,28 +9,29 @@
             </div>
             <div class="col-md-6 mx-auto">
                 <div class="card card-body">
-                    <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('blog.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <h4 class="text-center">Add Blog</h4>
+                        <h4 class="text-center">Edit Blog</h4>
                         <div class="from-group mb-3">
                             <label for="">Name</label>
-                            <input type="text" name="name" class="form-control">
-                            <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
+                            <input type="text" value="{{ $blog->name }}" name="name" class="form-control">
+
                         </div>
                         <div class="from-group mb-3">
                             <label for="">Image</label>
                             <input type="file" name="image" class="form-control">
-                            <span class="text-danger">{{ $errors->has('name') ? $errors->first('image') : '' }}</span>
+                            <img src="{{ asset($blog->image) }}" alt="blog-image" style="width: 80px;"/>
+
                         </div>
                         <div class="from-group mb-3">
                             <label for="">Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <textarea name="description" class="form-control">{{ $blog->name }}</textarea>
                         </div>
                         <div class="from-group mb-3">
                             <label for="">Status</label>
                             <select name="status" id="" class="form-control">
-                                <option value="1">Active</option>
-                                <option value="0">Inactive</option>
+                                <option value="1" {{ $blog->status == 1 ? 'selected' : '' }}>Active</option>
+                                <option value="0" {{ $blog->status == 0 ? 'selected' : '' }}>Inactive</option>
                             </select>
                         </div>
                         <div class="from-group mb-3">

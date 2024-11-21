@@ -38,8 +38,8 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-info btn-sm" id="button_edit"><i class="fa fa-edit"></i></a>
-                                    <a href="" onclick="return confirm('Are you sure delete this?')" class="btn btn-danger" id="button_delete"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ route('blog.edit',$blog->id) }}" class="btn btn-info btn-sm" id="button_edit"><i class="fa fa-edit"></i></a>
+                                    <a href="{{ route('blog.delete',$blog->id) }}" onclick="return confirm('Are you sure delete this?')" class="btn btn-danger btn-sm" id="button_delete"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach

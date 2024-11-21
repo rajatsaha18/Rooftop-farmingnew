@@ -44,6 +44,9 @@ Route::post('/member-approved/{id}', [DashboardController::class,'memberApproved
 Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
 Route::get('/blog/add',[BlogController::class,'create'])->name('blog.add');
 Route::post('/blog/store',[BlogController::class,'store'])->name('blog.store');
+Route::get('/blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
+Route::post('/blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
+Route::get('/blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
 
 
 

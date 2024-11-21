@@ -26,12 +26,44 @@ class Blog extends Model
 
     public static function newBlog($request)
     {
-        self::$blog = new blog();
+        self::$blog = new Blog();
         self::$blog->name           = $request->name;
         self::$blog->description    = $request->description;
         self::$blog->image          = self::getImageUrl($request->file('image'));
         self::$blog->status         = $request->status;
         self::$blog->save();
 
+    }
+
+    public static function updateBlog($request, $id)
+    {
+        self::$blog = Blog::find($id);
+        if($request->file('image'))
+        {
+            if(file_exists(self::$blog->image))
+            {
+                unlink(self::$blog->image);
+            }
+            self::$imageUrl = self::getImageUrl($request->file('image'));
+        }
+        else
+        {
+            self::$imageUrl = self::$blog->image;
+        }
+        self::$blog->name           = $request->name;
+        self::$blog->description    = $request->description;
+        self::$blog->image          = self::$imageUrl;
+        self::$blog->status         = $request->status;
+        self::$blog->save();
+    }
+
+    public static function deleteBlog($id)
+    {
+        self::$blog = Blog::find($id);
+        if(file_exists(self::$blog))
+        {
+            unlink(self::$blog->image);
+        }
+        self::$blog->delete();
     }
 }
