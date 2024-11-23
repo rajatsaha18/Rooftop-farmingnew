@@ -7,6 +7,7 @@ use App\Http\Middleware\CheckMember;
 use App\Http\Middleware\RedirectIfAuth;
 use App\Http\Controllers\website\MyProjectController;
 use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\ServiceController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -39,6 +40,14 @@ Route::get('/member-list', [DashboardController::class,'memberList'])->name('das
 Route::get('/member-list/edit/{id}', [DashboardController::class,'edit'])->name('memberlist.edit');
 Route::get('/member-list/delete/{id}', [DashboardController::class,'delete'])->name('memberlist.delete');
 Route::post('/member-approved/{id}', [DashboardController::class,'memberApproved'])->name('member.approved');
+
+//service
+Route::get('/service',[ServiceController::class,'index'])->name('service.index');
+Route::get('/service/create',[ServiceController::class,'create'])->name('service.create');
+Route::post('/service/store',[ServiceController::class,'store'])->name('service.store');
+Route::get('/service/edit/{id}',[ServiceController::class,'edit'])->name('service.edit');
+Route::post('/service/update/{id}',[ServiceController::class,'update'])->name('service.update');
+Route::get('/service/delete/{id}',[ServiceController::class,'delete'])->name('service.delete');
 
 //blog
 Route::get('/blog',[BlogController::class,'index'])->name('blog.index');

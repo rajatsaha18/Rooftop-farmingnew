@@ -2,14 +2,14 @@
     <div class="navbar-wrapper">
         <div class="m-header"><a href="index.html"
                 class="b-brand text-primary"><!-- ========   Change your logo from here   ============ --> <img
-                    src="https://ableproadmin.com/assets/images/logo-dark.svg" class="img-fluid logo-lg"
-                    alt="logo"> <span
-                    class="badge bg-light-success rounded-pill ms-2 theme-version">v9.4.3</span></a></div>
+                    src="https://ableproadmin.com/assets/images/logo-dark.svg" class="img-fluid logo-lg" alt="logo">
+                <span class="badge bg-light-success rounded-pill ms-2 theme-version">v9.4.3</span></a></div>
         <div class="navbar-content">
             <div class="card pc-user-card">
                 <div class="card-body">
                     <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0"><img src="{{asset('public/admin')}}/assets/images/user/avatar-1.jpg" alt="user-image"
+                        <div class="flex-shrink-0"><img
+                                src="{{ asset('public/admin') }}/assets/images/user/avatar-1.jpg" alt="user-image"
                                 class="user-avtar wid-45 rounded-circle"></div>
                         <div class="flex-grow-1 ms-3 me-2">
                             <h6 class="mb-0">Jonh Smith</h6><small>Administrator</small>
@@ -46,16 +46,22 @@
                             </svg> </span><span class="pc-mtext">Blog</span> <span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link"
-                                href="{{ route('blog.index') }}">Add Blog</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('blog.index') }}">Add Blog</a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="pc-item"><a href="{{ route('dashboard.member') }}"
-                        class="pc-link"><span class="pc-micon"><svg class="pc-icon">
+
+                <li class="pc-item"><a href="{{ route('service.index') }}" class="pc-link"><span
+                            class="pc-micon"><svg class="pc-icon">
                                 <use xlink:href="#custom-notification-status"></use>
-                            </svg> </span><span class="pc-mtext">Member List</span></a></li>
+                            </svg> </span><span class="pc-mtext">Service</span></a>
+                </li>
+                <li class="pc-item"><a href="{{ route('dashboard.member') }}" class="pc-link"><span
+                            class="pc-micon"><svg class="pc-icon">
+                                <use xlink:href="#custom-notification-status"></use>
+                            </svg> </span><span class="pc-mtext">Member List</span></a>
+                </li>
             </ul>
         </div>
     </div>
