@@ -8,6 +8,7 @@ use App\Http\Middleware\RedirectIfAuth;
 use App\Http\Controllers\website\MyProjectController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\Admin\GalleryController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -40,6 +41,14 @@ Route::get('/member-list', [DashboardController::class,'memberList'])->name('das
 Route::get('/member-list/edit/{id}', [DashboardController::class,'edit'])->name('memberlist.edit');
 Route::get('/member-list/delete/{id}', [DashboardController::class,'delete'])->name('memberlist.delete');
 Route::post('/member-approved/{id}', [DashboardController::class,'memberApproved'])->name('member.approved');
+
+//gallery
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
+Route::get('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
+Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
+Route::get('/gallery/edit/{id}',[GalleryController::class,'edit'])->name('gallery.edit');
+Route::post('/gallery/update/{id}',[GalleryController::class,'update'])->name('gallery.update');
+Route::get('/gallery/delete/{id}',[GalleryController::class,'delete'])->name('gallery.delete');
 
 //service
 Route::get('/service',[ServiceController::class,'index'])->name('service.index');
