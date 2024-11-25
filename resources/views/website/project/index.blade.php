@@ -3,16 +3,7 @@
 Home | Rooftop Farming
 @endsection
 @section('content')
-<style>
-    #button_edit
-    {
-        background-color: skyblue;
-    }
-    #button_delete
-    {
-        background-color: red;
-    }
-</style>
+
  <section class="py-2">
     <div class="container">
         <div class="row">

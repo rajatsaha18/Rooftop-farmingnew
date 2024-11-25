@@ -25,7 +25,7 @@
                         <div class="from-group mb-3">
                             <label for="">Price</label>
                             <input type="text" name="price" class="form-control" placeholder="Enter Price">
-                            <span class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
+                            <span class="text-danger">{{ $errors->has('price') ? $errors->first('price') : '' }}</span>
                         </div>
                         <div class="from-group mb-3">
                             <label for="">Description</label>

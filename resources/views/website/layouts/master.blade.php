@@ -31,7 +31,9 @@
     <link href="{{ asset('public/website/assets/css/shop.css') }}" rel="stylesheet">
     <link href="{{ asset('public/website/assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('public/website/assets/css/unit-test.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+        integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
         integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA=="
@@ -80,6 +82,14 @@
             position: relative;
             z-index: 1;
         }
+
+        #button_edit {
+            background-color: skyblue;
+        }
+
+        #button_delete {
+            background-color: red;
+        }
     </style>
 
 </head>
@@ -109,15 +119,15 @@
                                 <a href="{{ route('member') }}" class="btn member_button">Member</a>
                             </li>
                             @auth
-                            <li>
-                                <a href="{{ route('member.logout') }}" class="btn member_button">Logout</a>
-                            </li>
+                                <li>
+                                    <a href="{{ route('member.logout') }}" class="btn member_button">Logout</a>
+                                </li>
 
                             @endauth
                             @guest
-                            <li>
-                                <a href="{{ route('member.login') }}" class="btn member_button">Login</a>
-                            </li>
+                                <li>
+                                    <a href="{{ route('member.login') }}" class="btn member_button">Login</a>
+                                </li>
 
                             @endguest
 
@@ -208,7 +218,5 @@
 
 
 </body>
-
-<!-- Mirrored from validthemes.net/site-template/agrul/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Jul 2024 03:15:11 GMT -->
 
 </html>

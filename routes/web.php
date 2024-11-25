@@ -9,6 +9,7 @@ use App\Http\Controllers\website\MyProjectController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\website\PlantController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -22,7 +23,16 @@ Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 ->name('member.dashboard')->middleware(CheckMember::class);
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
 
-// member project
+// plant
+Route::get('/plant', [PlantController::class, 'index'])->name('plant.index');
+Route::get('/plant/create', [PlantController::class, 'create'])->name('plant.create');
+Route::post('/plant/store', [PlantController::class, 'store'])->name('plant.store');
+Route::get('/plant/show/{id}', [PlantController::class, 'show'])->name('plant.show');
+Route::post('/plant/updateStage/{id}', [PlantController::class, 'updateStage'])->name('plant.updateStage');
+Route::get('/plant/delete/{id}', [PlantController::class, 'deletePlant'])->name('plant.delete');
+Route::post('/plant/harvested/{id}', [PlantController::class, 'markAsHarvested'])->name('plant.harvested');
+
+//member project
 Route::get('/member-project', [MyProjectController::class, 'index'])->name('member.project');
 Route::get('/member-project/add', [MyProjectController::class, 'projectAdd'])->name('project.add');
 Route::post('/member-project/store', [MyProjectController::class, 'store'])->name('project.store');
