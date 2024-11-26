@@ -14,4 +14,9 @@ class Plant extends Model
     {
         return $this->hasMany(GrowthStage::class);
     }
+
+    public function careSchedules()
+    {
+        return $this->hasMany(PlantCareSchedule::class);
+    }
 }

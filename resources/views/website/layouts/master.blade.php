@@ -90,6 +90,57 @@
         #button_delete {
             background-color: red;
         }
+
+        .custom_button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom_button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .custom_button:hover::before {
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+        }
+
+        .custom_button:hover {
+            background-color: #45a049;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom_button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(2px);
+        }
+
+        .custom_button span {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 
 </head>

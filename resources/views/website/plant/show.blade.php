@@ -16,6 +16,30 @@
                     @else
                         <td> <strong>Harvested Date:</strong> Not harvested yet</td>
                     @endif
+                    <div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>sl</th>
+                                    <th>type</th>
+                                    <th>next date</th>
+                                    <th>frequency</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($plant->careSchedules as $schedule)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $schedule->type }}</td>
+                                    <td>{{ $schedule->next_due_date }}</td>
+                                    <td>{{ $schedule->frequency_in_days }}</td>
+                                </tr>
+
+                                @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <h2>Growth Stage</h2>

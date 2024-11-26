@@ -27,6 +27,7 @@ Home | Rooftop Farming
                                 <td>Planting Date</td>
                                 <td>Current Stage</td>
                                 <td>Harvest Date</td>
+                                <td>Care Schedule</td>
                                 <td>Action</td>
                             </tr>
                         </thead>
@@ -43,6 +44,9 @@ Home | Rooftop Farming
                                 @else
                                 <td>Not harvested yet</td>
                                 @endif
+                                <td>
+                                    <a href="{{ route('care_schedule.create',$plant->id) }}" class="custom_button" ><i class="fa-solid fa-calendar-days"></i></a>
+                                </td>
                                 <td>
                                     <a href="{{ route('plant.show',$plant->id) }}" class="btn btn-info btn-sm" id="button_edit"><i class="fa fa-edit"></i></a>
                                     <a href="{{ route('plant.delete',$plant->id) }}" onclick="return confirm('Are you sure delete this?')" class="btn btn-danger" id="button_delete"><i class="fa fa-trash"></i></a>

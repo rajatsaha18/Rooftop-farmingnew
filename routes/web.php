@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\website\PlantController;
+use App\Http\Controllers\website\PlantCareController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -23,7 +24,12 @@ Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 ->name('member.dashboard')->middleware(CheckMember::class);
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
 
-// plant
+// plant-care
+
+Route::get('/plant-care/create/{id}', [PlantCareController::class, 'create'])->name('care_schedule.create');
+Route::post('/plant-care/store/{id}', [PlantCareController::class, 'store'])->name('care.schedule.store');
+
+//plant
 Route::get('/plant', [PlantController::class, 'index'])->name('plant.index');
 Route::get('/plant/create', [PlantController::class, 'create'])->name('plant.create');
 Route::post('/plant/store', [PlantController::class, 'store'])->name('plant.store');
