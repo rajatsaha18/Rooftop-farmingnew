@@ -62,6 +62,11 @@
                                 <use xlink:href="#custom-notification-status"></use>
                             </svg> </span><span class="pc-mtext">Gallery</span></a>
                 </li>
+                <li class="pc-item"><a href="{{ route('forum.category.index') }}" class="pc-link"><span
+                            class="pc-micon"><svg class="pc-icon">
+                                <use xlink:href="#custom-notification-status"></use>
+                            </svg> </span><span class="pc-mtext">Forum Category</span></a>
+                </li>
                 <li class="pc-item"><a href="{{ route('dashboard.member') }}" class="pc-link"><span
                             class="pc-micon"><svg class="pc-icon">
                                 <use xlink:href="#custom-notification-status"></use>

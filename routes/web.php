@@ -11,6 +11,8 @@ use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\website\PlantController;
 use App\Http\Controllers\website\PlantCareController;
+use App\Http\Controllers\Admin\ForumCategoryController;
+use App\Http\Controllers\website\ForumPostController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -25,6 +27,12 @@ Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
 
 // plant-care
+
+Route::get('/forum-post', [ForumPostController::class, 'index'])->name('forum.post.index');
+Route::get('/forum-post/create', [ForumPostController::class, 'create'])->name('forum.post.create');
+Route::post('/forum-post/store', [ForumPostController::class, 'store'])->name('forum.post.store');
+Route::get('/forum-post/show/{id}', [ForumPostController::class, 'show'])->name('forum.post.show');
+Route::post('/forum-post/comment/{id}', [ForumPostController::class, 'comment'])->name('forum.comment.store');
 
 Route::get('/plant-care/create/{id}', [PlantCareController::class, 'create'])->name('care_schedule.create');
 Route::post('/plant-care/store/{id}', [PlantCareController::class, 'store'])->name('care.schedule.store');
@@ -73,6 +81,10 @@ Route::post('/service/store',[ServiceController::class,'store'])->name('service.
 Route::get('/service/edit/{id}',[ServiceController::class,'edit'])->name('service.edit');
 Route::post('/service/update/{id}',[ServiceController::class,'update'])->name('service.update');
 Route::get('/service/delete/{id}',[ServiceController::class,'delete'])->name('service.delete');
+
+//forum category
+Route::get('/forum-category',[ForumCategoryController::class,'index'])->name('forum.category.index');
+Route::post('/forum-category/create',[ForumCategoryController::class,'store'])->name('forum.category.store');
 
 //blog
 Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
