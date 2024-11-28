@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Session;
 
 class MyProjectController extends Controller
@@ -12,7 +13,8 @@ class MyProjectController extends Controller
     public $projects;
     public function index()
     {
-        $projects = $this->projects = Project::all();
+        $userId = Auth::id();
+        $projects = $this->projects = Project::where('user_id',$userId )->get();
         return view('website.project.index',compact('projects'));
     }
     public function projectAdd()

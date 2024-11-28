@@ -160,10 +160,15 @@
     <div class="top-bar-area text-light">
         <div class="container">
             <div class="row align-center">
-                <div class="col-lg-9">
+                <div class="col-lg-9 mt-2 mb-2">
                     <div class="flex-item left">
                         <p>
-                            That's right, we only sell 100% organic
+                            <form action="{{ route('forum.access') }}" method="POST">
+                                @csrf
+                                <li>
+                                    <input type="submit" class="btn member_button" value="Community Forum"/>
+                                </li>
+                            </form>
                         </p>
                         <ul>
                             <li>
@@ -182,33 +187,22 @@
 
                             @endguest
 
+
+
+
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-3 text-end">
-                    <div class="social">
+                    <div class="">
                         <ul>
+                            @auth
                             <li>
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
+                                <a href="{{ route('member.dashboard') }}" class="btn member_button">{{ Auth::user()->name }}</a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
+                            @endauth
+
                         </ul>
                     </div>
                 </div>

@@ -55,5 +55,16 @@ class HomeController extends Controller
     {
         return view('website.home.shop');
     }
+    public function forumAccess()
+    {
+        if(!Auth::check())
+        {
+            return redirect()->back()->with('message','please log in first');
+        }
+        else
+        {
+            return redirect()->route('forum.post.index');
+        }
+    }
 
 }

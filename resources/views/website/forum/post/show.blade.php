@@ -16,18 +16,17 @@
                         <h2>{{ $post->title }}</h2>
                         <p>{{ $post->body }}</p>
                     </div>
-                    <h2>Comments:</h2>
-                    @foreach ($comments as $comment)
+                    <h4 class="mb-5">Comments:</h4>
+                    @foreach ($post->comments as $comment)
                     <div>
-                        <p>{{ $comment->body }}</p>
-                        <small>By {{ $comment->user->name }}</small>
+                        <p><strong>{{ $comment->user->name }}: </strong>{{ $comment->body }}</p>
 
                     </div>
 
                     @endforeach
 
 
-                    <h3>Add a Comment:</h3>
+                    <h4>Add a Comment:</h4>
                     <form action="{{ route('forum.comment.store', $post->id) }}" method="POST">
                         @csrf
                         <div class="from-group">

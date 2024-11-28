@@ -20,23 +20,28 @@ class ForumPostController extends Controller
         $categories = ForumCategory::all();
         return view('website.forum.post.create',compact('categories'));
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title'  => 'required',
+        ]);
+
+        ForumPost::create([
+            'title'         => $request->title,
+            'body'          => $request->body,
+            'category_id'   => $request->category_id,
+            'user_id'       => auth()->id(),
+        ]);
+
+        return redirect()->back()->with('message', 'post create successfully');
+    }
+
     public function show($id)
     {
         $post = ForumPost::with('comments.user')->findOrFail($id);
         $comments = Comment::all();
         return view('website.forum.post.show',compact('post','comments'));
-    }
-    public function store(Request $request)
-    {
-
-        ForumPost::create([
-            'title' => $request->title,
-            'body' => $request->body,
-            'category_id' => $request->category_id,
-            'user_id' => auth()->id(),
-        ]);
-
-        return redirect()->back()->with('message', 'post create successfully');
     }
     public function comment(Request $request,$id)
     {
@@ -44,9 +49,9 @@ class ForumPostController extends Controller
         $post = ForumPost::findOrFail($id);
 
         Comment::create([
-            'body' => $request->body,
-            'post_id' => $post->id,
-            'user_id' => auth()->id(),
+            'body'      => $request->body,
+            'post_id'   => $post->id,
+            'user_id'   => auth()->id(),
         ]);
 
         return redirect()->back()->with('message', 'comment create successfully');

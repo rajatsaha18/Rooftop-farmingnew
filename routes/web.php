@@ -25,6 +25,7 @@ Route::post('/member-login-confirm', [HomeController::class, 'memberLoginSubmit'
 Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 ->name('member.dashboard')->middleware(CheckMember::class);
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
+Route::post('/forum-access', [HomeController::class, 'forumAccess'])->name('forum.access');
 
 // plant-care
 
