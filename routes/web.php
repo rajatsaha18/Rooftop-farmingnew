@@ -13,6 +13,7 @@ use App\Http\Controllers\website\PlantController;
 use App\Http\Controllers\website\PlantCareController;
 use App\Http\Controllers\Admin\ForumCategoryController;
 use App\Http\Controllers\website\ForumPostController;
+use App\Http\Controllers\website\ProfileController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -27,8 +28,15 @@ Route::get('/member-dashboard', [HomeController::class, 'memberDashboard'])
 Route::get('/member-logout', [HomeController::class, 'memberLogout'])->name('member.logout');
 Route::post('/forum-access', [HomeController::class, 'forumAccess'])->name('forum.access');
 
-// plant-care
+// profile management
+Route::middleware('auth')->group(function() {
+    Route::get('/profile-edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile-update', [ProfileController::class, 'update'])->name('profile.update');
 
+});
+
+
+//plant care
 Route::get('/forum-post', [ForumPostController::class, 'index'])->name('forum.post.index');
 Route::get('/forum-post/create', [ForumPostController::class, 'create'])->name('forum.post.create');
 Route::post('/forum-post/store', [ForumPostController::class, 'store'])->name('forum.post.store');

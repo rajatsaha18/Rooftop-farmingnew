@@ -15,11 +15,20 @@ Home | Rooftop Farming
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card card-body shadow-lg">
-                            @php
-                                DB::table('projects')->where('user_id')count();
-                            @endphp
                             <p class="text-center">My Projects</p>
-                            <p></p>
+                            <p>10</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-body shadow-lg">
+                            <p class="text-center">My Projects</p>
+                            <p>10</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-body shadow-lg">
+                            <p class="text-center">My Projects</p>
+                            <p>10</p>
                         </div>
                     </div>
                 </div>
