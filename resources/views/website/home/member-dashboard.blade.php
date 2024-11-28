@@ -12,9 +12,16 @@ Home | Rooftop Farming
             @include('website.member.sidebar')
 
             <div class="col-md-9">
-                <div class="card card-body">
-                    <h4>This is Dashboard</h4>
-
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-body shadow-lg">
+                            @php
+                                DB::table('projects')->where('user_id')count();
+                            @endphp
+                            <p class="text-center">My Projects</p>
+                            <p></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
