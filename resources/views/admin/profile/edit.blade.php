@@ -3,7 +3,6 @@
 <section class="py-2">
     <div class="container">
         <div class="row">
-
             <div class="col-md-6 mx-auto">
                 <div class="card card-body">
                     <h4 class="text-center">Admin Profile</h4>
