@@ -25,16 +25,16 @@
                             @foreach ($blogs as $blog)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $blog->name }}</td>
-                                <td>{{ $blog->description }}</td>
+                                <td>{{ Str::limit($blog->name, 30, '...') }}</td>
+                                <td>{{ Str::limit($blog->description, 50, '...') }}</td>
                                 <td>
                                     <img src="{{ asset($blog->image) }}" alt="project-image" style="width:80px"/>
                                 </td>
                                 <td>
                                     @if($blog->status == 1)
-                                    <span class="badge badge-success">Active</span>
+                                    <span class="text-success">Active</span>
                                     @else
-                                    <span class="badge badge-danger">Inactive</span>
+                                    <span class="text-danger">Inactive</span>
                                     @endif
                                 </td>
                                 <td>

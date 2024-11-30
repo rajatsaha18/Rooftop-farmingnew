@@ -28,16 +28,11 @@
             </div>
             <ul class="pc-navbar">
                 <li class="pc-item pc-caption"><label>Navigation</label></li>
-                <li class="pc-item pc-hasmenu"><a href="#!" class="pc-link"><span class="pc-micon"><svg
+                <li class="pc-item pc-hasmenu"><a href="{{ route('dashboard') }}" class="pc-link"><span class="pc-micon"><svg
                                 class="pc-icon">
                                 <use xlink:href="#custom-status-up"></use>
-                            </svg> </span><span class="pc-mtext">Dashboard</span> <span class="pc-arrow"><i
-                                data-feather="chevron-right"></i></span> <span class="pc-badge">2</span></a>
-                    <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="index.html">Default</a></li>
-                        <li class="pc-item"><a class="pc-link" href="analytics.html">Analytics</a></li>
-                        <li class="pc-item"><a class="pc-link" href="finance.html">Finance</a></li>
-                    </ul>
+                            </svg> </span><span class="pc-mtext">Dashboard</span></a>
+
                 </li>
 
                 <li class="pc-item pc-hasmenu"><a href="#!" class="pc-link"><span class="pc-micon"><svg

@@ -59,14 +59,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="{{ route('shop') }}" class="" data-toggle="dropdown" >Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="project.html">Project</a></li>
-                            <li><a href="project-details.html">Project Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="" data-toggle="dropdown" >Services</a>
+                        <a href="{{ route('home.service') }}" class="" data-toggle="dropdown" >Services</a>
                         <ul class="dropdown-menu">
                             <li><a href="services.html">Services Version One</a></li>
                             <li><a href="services-2.html">Services Version Two</a></li>

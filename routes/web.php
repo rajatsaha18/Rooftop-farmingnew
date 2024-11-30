@@ -14,10 +14,12 @@ use App\Http\Controllers\website\PlantCareController;
 use App\Http\Controllers\Admin\ForumCategoryController;
 use App\Http\Controllers\website\ForumPostController;
 use App\Http\Controllers\website\ProfileController;
+use App\Http\Controllers\Admin\AdminProfileController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
+Route::get('/home-service', [HomeController::class, 'service'])->name('home.service');
 Route::get('/member', [HomeController::class, 'member'])->name('member');
 Route::post('/member-submit', [HomeController::class, 'memberSubmit'])->name('member.submit');
 Route::get('/member-login', [HomeController::class, 'memberLogin'])
@@ -74,6 +76,10 @@ Route::get('/member-list', [DashboardController::class,'memberList'])->name('das
 Route::get('/member-list/edit/{id}', [DashboardController::class,'edit'])->name('memberlist.edit');
 Route::get('/member-list/delete/{id}', [DashboardController::class,'delete'])->name('memberlist.delete');
 Route::post('/member-approved/{id}', [DashboardController::class,'memberApproved'])->name('member.approved');
+
+//admin profile
+Route::get('/admin-profile',[AdminProfileController::class,'edit'])->name('admin.profile.edit');
+Route::put('/admin-profile/update',[AdminProfileController::class,'update'])->name('admin.profile.update');
 
 //gallery
 Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');

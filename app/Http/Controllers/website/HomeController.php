@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
@@ -54,6 +55,11 @@ class HomeController extends Controller
     public function shop()
     {
         return view('website.home.shop');
+    }
+    public function service()
+    {
+        $services = Service::where('status',1)->get();
+        return view('website.home.service',compact('services'));
     }
     public function forumAccess()
     {

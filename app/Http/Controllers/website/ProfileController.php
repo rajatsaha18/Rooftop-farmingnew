@@ -29,7 +29,6 @@ class ProfileController extends Controller
             {
                 return back()->withErrors(['current_password' => 'The current_password does not match our records']);
             }
-
             $user->password = Hash::make($request->password);
         }
         $user->save();

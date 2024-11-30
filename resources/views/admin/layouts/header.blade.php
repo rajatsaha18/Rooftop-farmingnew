@@ -37,14 +37,18 @@
                         aria-expanded="false"><svg class="pc-icon">
                             <use xlink:href="#custom-setting-2"></use>
                         </svg></a>
-                    <div class="dropdown-menu dropdown-menu-end pc-h-dropdown"><a href="#!"
-                            class="dropdown-item"><i class="ti ti-user"></i> <span>My Account</span> </a><a
+                    <div class="dropdown-menu dropdown-menu-end pc-h-dropdown"><a href="{{ route('admin.profile.edit') }}"
+                            class="dropdown-item"><i class="ti ti-user"></i> <span>Change Password</span> </a><a
                             href="#!" class="dropdown-item"><i class="ti ti-settings"></i>
                             <span>Settings</span> </a><a href="#!" class="dropdown-item"><i
                                 class="ti ti-headset"></i> <span>Support</span> </a><a href="#!"
                             class="dropdown-item"><i class="ti ti-lock"></i> <span>Lock Screen</span> </a><a
-                            href="#!" class="dropdown-item"><i class="ti ti-power"></i>
+                            href="#!" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();" class="dropdown-item"><i class="ti ti-power"></i>
                             <span>Logout</span></a></div>
+                            <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                                @csrf
+
+                            </form>
                 </li>
                 <li class="pc-h-item"><a href="#" class="pc-head-link me-0" data-bs-toggle="offcanvas"
                         data-bs-target="#announcement" aria-controls="announcement"><svg class="pc-icon">
@@ -154,173 +158,11 @@
                         href="#" role="button" aria-haspopup="false" data-bs-auto-close="outside"
                         aria-expanded="false"><img src="{{asset('public/admin')}}/assets/images/user/avatar-2.jpg" alt="user-image"
                             class="user-avtar"></a>
-                    <div class="dropdown-menu dropdown-user-profile dropdown-menu-end pc-h-dropdown">
-                        <div class="dropdown-header d-flex align-items-center justify-content-between">
-                            <h5 class="m-0">Profile</h5>
-                        </div>
-                        <div class="dropdown-body">
-                            <div class="profile-notification-scroll position-relative"
-                                style="max-height: calc(100vh - 225px)">
-                                <div class="d-flex mb-1">
-                                    <div class="flex-shrink-0"><img src="{{asset('public/admin')}}/assets/images/user/avatar-2.jpg"
-                                            alt="user-image" class="user-avtar wid-35"></div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h6 class="mb-1">Carson Darrin 🖖</h6><span><a
-                                                href="https://ableproadmin.com/cdn-cgi/l/email-protection"
-                                                class="__cf_email__"
-                                                data-cfemail="03606271706c6d2d676271716a6d43606c6e73626d7a2d6a6c">[email&#160;protected]</a></span>
-                                    </div>
-                                </div>
-                                <hr class="border-secondary border-opacity-50">
-                                <div class="card">
-                                    <div class="card-body py-3">
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <h5 class="mb-0 d-inline-flex align-items-center"><svg
-                                                    class="pc-icon text-muted me-2">
-                                                    <use xlink:href="#custom-notification-outline"></use>
-                                                </svg>Notification</h5>
-                                            <div class="form-check form-switch form-check-reverse m-0"><input
-                                                    class="form-check-input f-18" type="checkbox"
-                                                    role="switch"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p class="text-span">Manage</p><a href="#"
-                                    class="dropdown-item"><span><svg class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-setting-outline"></use>
-                                        </svg> <span>Settings</span> </span></a><a href="#"
-                                    class="dropdown-item"><span><svg class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-share-bold"></use>
-                                        </svg> <span>Share</span> </span></a><a href="#"
-                                    class="dropdown-item"><span><svg class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-lock-outline"></use>
-                                        </svg> <span>Change Password</span></span></a>
-                                <hr class="border-secondary border-opacity-50">
-                                <p class="text-span">Team</p><a href="#"
-                                    class="dropdown-item"><span><svg class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-profile-2user-outline"></use>
-                                        </svg> <span>UI Design team</span></span>
-                                    <div class="user-group"><img src="{{asset('public/admin')}}/assets/images/user/avatar-1.jpg"
-                                            alt="user-image" class="avtar"> <span
-                                            class="avtar bg-danger text-white">K</span> <span
-                                            class="avtar bg-success text-white"><svg class="pc-icon m-0">
-                                                <use xlink:href="#custom-user"></use>
-                                            </svg> </span><span
-                                            class="avtar bg-light-primary text-primary">+2</span></div>
-                                </a><a href="#" class="dropdown-item"><span><svg
-                                            class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-profile-2user-outline"></use>
-                                        </svg> <span>Friends Groups</span></span>
-                                    <div class="user-group"><img src="{{asset('public/admin')}}/assets/images/user/avatar-1.jpg"
-                                            alt="user-image" class="avtar"> <span
-                                            class="avtar bg-danger text-white">K</span> <span
-                                            class="avtar bg-success text-white"><svg class="pc-icon m-0">
-                                                <use xlink:href="#custom-user"></use>
-                                            </svg></span></div>
-                                </a><a href="#" class="dropdown-item"><span><svg
-                                            class="pc-icon text-muted me-2">
-                                            <use xlink:href="#custom-add-outline"></use>
-                                        </svg> <span>Add new</span></span>
-                                    <div class="user-group"><span class="avtar bg-primary text-white"><svg
-                                                class="pc-icon m-0">
-                                                <use xlink:href="#custom-add-outline"></use>
-                                            </svg></span></div>
-                                </a>
-                                <hr class="border-secondary border-opacity-50">
-                                <div class="d-grid mb-3"><button class="btn btn-primary"><svg
-                                            class="pc-icon me-2">
-                                            <use xlink:href="#custom-logout-1-outline"></use>
-                                        </svg>Logout</button></div>
-                                <div class="card border-0 shadow-none drp-upgrade-card mb-0"
-                                    style="background-image: url({{asset('public/admin')}}/assets/images/layout/img-profile-card.jpg)">
-                                    <div class="card-body">
-                                        <div class="user-group"><img src="{{asset('public/admin')}}/assets/images/user/avatar-1.jpg"
-                                                alt="user-image" class="avtar"> <img
-                                                src="{{asset('public/admin')}}/assets/images/user/avatar-2.jpg" alt="user-image"
-                                                class="avtar"> <img src="{{asset('public/admin')}}/assets/images/user/avatar-3.jpg"
-                                                alt="user-image" class="avtar"> <img
-                                                src="{{asset('public/admin')}}/assets/images/user/avatar-4.jpg" alt="user-image"
-                                                class="avtar"> <img src="{{asset('public/admin')}}/assets/images/user/avatar-5.jpg"
-                                                alt="user-image" class="avtar"> <span
-                                                class="avtar bg-light-primary text-primary">+20</span></div>
-                                        <h3 class="my-3 text-dark">245.3k <small
-                                                class="text-muted">Followers</small></h3><a href="#"
-                                            class="btn btn btn-warning buynowlinks"><svg class="pc-icon me-2">
-                                                <use xlink:href="#custom-logout-1-outline"></use>
-                                            </svg> Upgrade to Business</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </li>
             </ul>
         </div>
     </div>
 </header>
-<div class="offcanvas pc-announcement-offcanvas offcanvas-end" tabindex="-1" id="announcement"
-        aria-labelledby="announcementLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="announcementLabel">What's new announcement?</h5><button type="button"
-                class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p class="text-span">Today</p>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="align-items-center d-flex flex-wrap gap-2 mb-3">
-                        <div class="badge bg-light-success f-12">Big News</div>
-                        <p class="mb-0 text-muted">2 min ago</p><span class="badge dot bg-warning"></span>
-                    </div>
-                    <h5 class="mb-3">Able Pro is Redesigned</h5>
-                    <p class="text-muted">Able Pro is completely renowed with high aesthetics User Interface.</p><img
-                        src="{{asset('public/admin')}}/assets/images/layout/img-announcement-1.png" alt="img"
-                        class="img-fluid mb-3">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-grid"><a class="btn btn-outline-secondary"
-                                    href="https://1.envato.market/zNkqj6" target="_blank">Check Now</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="align-items-center d-flex flex-wrap gap-2 mb-3">
-                        <div class="badge bg-light-warning f-12">Offer</div>
-                        <p class="mb-0 text-muted">2 hour ago</p><span class="badge dot bg-warning"></span>
-                    </div>
-                    <h5 class="mb-3">Able Pro is in best offer price</h5>
-                    <p class="text-muted">Download Able Pro exclusive on themeforest with best price.</p><a
-                        href="https://1.envato.market/zNkqj6" target="_blank"><img
-                            src="{{asset('public/admin')}}/assets/images/layout/img-announcement-2.png" alt="img"
-                            class="img-fluid"></a>
-                </div>
-            </div>
-            <p class="text-span mt-4">Yesterday</p>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="align-items-center d-flex flex-wrap gap-2 mb-3">
-                        <div class="badge bg-light-primary f-12">Blog</div>
-                        <p class="mb-0 text-muted">12 hour ago</p><span class="badge dot bg-warning"></span>
-                    </div>
-                    <h5 class="mb-3">Featured Dashboard Template</h5>
-                    <p class="text-muted">Do you know Able Pro is one of the featured dashboard template selected by
-                        Themeforest team.?</p><img src="{{asset('public/admin')}}/assets/images/layout/img-announcement-3.png"
-                        alt="img" class="img-fluid">
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="align-items-center d-flex flex-wrap gap-2 mb-3">
-                        <div class="badge bg-light-primary f-12">Announcement</div>
-                        <p class="mb-0 text-muted">12 hour ago</p><span class="badge dot bg-warning"></span>
-                    </div>
-                    <h5 class="mb-3">Buy Once - Get Free Updated lifetime</h5>
-                    <p class="text-muted">Get the lifetime free updates once you purchase the Able Pro.</p><img
-                        src="{{asset('public/admin')}}/assets/images/layout/img-announcement-4.png" alt="img" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
+
 

@@ -28,7 +28,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $service->name }}</td>
                                 <td>{{ $service->price }}</td>
-                                <td>{{ $service->description }}</td>
+                                <td>{{ Str::limit($service->description, 50, '...') }}</td>
                                 <td>
                                     <img src="{{ asset($service->image) }}" alt="project-image" style="width:80px"/>
                                 </td>
