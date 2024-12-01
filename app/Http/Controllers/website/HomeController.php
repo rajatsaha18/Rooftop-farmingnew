@@ -5,6 +5,7 @@ namespace App\Http\Controllers\website;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
 use App\Models\Service;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -33,7 +34,6 @@ class HomeController extends Controller
        if(Auth::attempt($credentials))
        {
         return redirect()->route('member.dashboard')->with('message', 'Member Login Successfully');
-
        }
        return redirect()->route('member.login')->with('message', 'Please login');
     }
@@ -46,9 +46,9 @@ class HomeController extends Controller
     public function memberSubmit(Request $request)
     {
         $member = new User();
-        $member->name = $request->name;
-        $member->email = $request->email;
-        $member->password = $request->password;
+        $member->name       = $request->name;
+        $member->email      = $request->email;
+        $member->password   = $request->password;
         $member->save();
         return redirect()->back()->with('message', 'Please wait for approved admin your membership');
     }
@@ -60,6 +60,16 @@ class HomeController extends Controller
     {
         $services = Service::where('status',1)->get();
         return view('website.home.service',compact('services'));
+    }
+    public function blog()
+    {
+        $blogs = Blog::where('status',1)->get();
+        return view('website.home.blog',compact('blogs'));
+    }
+    public function blogDetails($slug)
+    {
+        $blog = Blog::where('slug',$slug)->first();
+        return view('website.home.blog-details',compact('blog'));
     }
     public function forumAccess()
     {

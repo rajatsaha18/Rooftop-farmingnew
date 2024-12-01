@@ -20,6 +20,8 @@ use App\Http\Controllers\Admin\AdminProfileController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/shop', [HomeController::class, 'shop'])->name('shop');
 Route::get('/home-service', [HomeController::class, 'service'])->name('home.service');
+Route::get('/home-blog', [HomeController::class, 'blog'])->name('home.blog');
+Route::get('/home-blog-details/{slug}', [HomeController::class, 'blogDetails'])->name('home.blog.details');
 Route::get('/member', [HomeController::class, 'member'])->name('member');
 Route::post('/member-submit', [HomeController::class, 'memberSubmit'])->name('member.submit');
 Route::get('/member-login', [HomeController::class, 'memberLogin'])

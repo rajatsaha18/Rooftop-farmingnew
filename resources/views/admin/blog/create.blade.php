@@ -35,7 +35,7 @@
                         </div>
                         <div class="from-group mb-3">
                             <label for=""></label>
-                            <input type="submit" class="btn btn-success" value="Save" />
+                            <input type="submit" class="btn btn-success" value="Create Blog" />
                         </div>
 
 

@@ -28,6 +28,10 @@ class Blog extends Model
     {
         self::$blog = new Blog();
         self::$blog->name           = $request->name;
+        function make_slug($string) {
+            return preg_replace('/\s+/u', '-', trim($string));
+        }
+        self::$blog->slug           = make_slug($request->name);
         self::$blog->description    = $request->description;
         self::$blog->image          = self::getImageUrl($request->file('image'));
         self::$blog->status         = $request->status;
@@ -51,6 +55,10 @@ class Blog extends Model
             self::$imageUrl = self::$blog->image;
         }
         self::$blog->name           = $request->name;
+        function make_slug($string) {
+            return preg_replace('/\s+/u', '-', trim($string));
+        }
+        self::$blog->slug           = make_slug($request->name);
         self::$blog->description    = $request->description;
         self::$blog->image          = self::$imageUrl;
         self::$blog->status         = $request->status;

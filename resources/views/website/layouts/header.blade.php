@@ -67,7 +67,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="" data-toggle="dropdown" >Blog</a>
+                        <a href="{{ route('home.blog') }}" class="" data-toggle="dropdown" >Blog</a>
                         <ul class="dropdown-menu">
                             <li><a href="blog-standard.html">Blog Standard</a></li>
                             <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
