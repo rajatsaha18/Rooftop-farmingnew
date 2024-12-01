@@ -1,4 +1,5 @@
-<footer class="bg-dark text-light" style="background-image: url({{ asset('public/website/assets/img/shape/brush-down.png') }})">
+<footer class="bg-dark text-light"
+    style="background-image: url({{ asset('public/website/assets/img/shape/brush-down.png') }})">
     <div class="container">
         <div class="f-items default-padding">
             <div class="row">
@@ -8,7 +9,8 @@
                     <div class="footer-item about">
                         <img class="logo" src="{{ asset('public/website/assets/img/logo-light.png') }}" alt="Logo">
                         <p>
-                            Happen active county. Winding morning ambition shyness evident to poor. Because elderly new to the point to main success.
+                            Happen active county. Winding morning ambition shyness evident to poor. Because elderly new
+                            to the point to main success.
                         </p>
                         <form action="#">
                             <input type="email" placeholder="Your Email" class="form-control" name="email">
@@ -61,7 +63,8 @@
                                     <div class="meta-title">
                                         <span class="post-date">12 Sep, 2022</span>
                                     </div>
-                                    <h5><a href="blog-single-with-sidebar.html">Meant widow equal an share least part. </a></h5>
+                                    <h5><a href="blog-single-with-sidebar.html">Meant widow equal an share least part.
+                                        </a></h5>
                                 </div>
                             </li>
                             <li>
@@ -74,7 +77,8 @@
                                     <div class="meta-title">
                                         <span class="post-date">18 Jul, 2022</span>
                                     </div>
-                                    <h5><a href="blog-single-with-sidebar.html">Future Plan & Strategy for Consutruction </a></h5>
+                                    <h5><a href="blog-single-with-sidebar.html">Future Plan & Strategy for Consutruction
+                                        </a></h5>
                                 </div>
                             </li>
                         </ul>
@@ -85,6 +89,9 @@
                 <!-- Single Itme -->
                 <div class="col-lg-3 col-md-6 item">
                     <div class="footer-item contact">
+                        @php
+                            $site = DB::table('site_settings')->first();
+                        @endphp
                         <h4 class="widget-title">Contact Info</h4>
                         <ul>
                             <li>
@@ -93,16 +100,17 @@
                                 </div>
                                 <div class="content">
                                     <strong>Address:</strong>
-                                    5919 Trussville Crossings Pkwy, Birmingham
+                                    {{ $site->address }}
                                 </div>
                             </li>
+
                             <li>
                                 <div class="icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div class="content">
                                     <strong>Email:</strong>
-                                    <a href="mailto:info@validtheme.com">info@validtheme.com</a>
+                                    <a href="mailto:info@validtheme.com">{{ $site->email }}</a>
                                 </div>
                             </li>
                             <li>
@@ -111,7 +119,7 @@
                                 </div>
                                 <div class="content">
                                     <strong>Phone:</strong>
-                                    <a href="tel:2151234567">+123 34598768</a>
+                                    <a href="tel:2151234567">+{{ $site->mobile }}</a>
                                 </div>
                             </li>
                         </ul>

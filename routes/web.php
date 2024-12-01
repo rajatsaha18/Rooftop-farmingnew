@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ForumCategoryController;
 use App\Http\Controllers\website\ForumPostController;
 use App\Http\Controllers\website\ProfileController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\SiteSettingController;
 
 /*============website===============*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -72,6 +73,10 @@ Route::get('/member-project/delete/{id}', [MyProjectController::class, 'delete']
 /*==================admin=====================*/
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
 Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+
+//site setting
+Route::get('/site-setting', [SiteSettingController::class,'index'])->name('site.index');
+Route::post('/site-setting/update', [SiteSettingController::class,'update'])->name('site.update');
 
 //member list
 Route::get('/member-list', [DashboardController::class,'memberList'])->name('dashboard.member');
